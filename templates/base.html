@@ -1,20 +1,29 @@
-<!-- 
-    TODO: Completar el template base del portal.
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portal de Publicaciones</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Portal de Publicaciones</h1>
+    </header>
 
-    Requisitos:
-    - Estructura HTML5 válida (<!DOCTYPE html>, <html>, <head>, <body>)
-    - En <title>: mostrar el nombre del sitio (podés hardcodearlo o usar una variable)
-    - Un <header> visible con el nombre del portal
-    - Una navegación (<nav>) con dos links:
-        - Inicio → {% url 'publicaciones:inicio' %}
-        - Publicaciones → {% url 'publicaciones:lista_publicaciones' %}
-    - Un bloque de contenido para que los templates hijos inserten su HTML:
-        {% block content %}{% endblock %}
-    - Un <footer> simple (puede ser solo un texto)
+    <nav>
+    <ul>
+        <li><a href="{% url 'publicaciones:inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'publicaciones:lista_publicaciones' %}">Publicaciones</a></li>
+    </ul>
+</nav>
 
-    Pista para el bloque de contenido:
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
--->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mi Portal de Publicaciones. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
